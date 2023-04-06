@@ -1,0 +1,153 @@
+.Banner {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: relative;
+
+    .carousel {
+        height: 100% !important;
+
+        .carousel-inner {
+            height: 100% !important;
+
+            .carousel-item {
+                height: 100% !important;
+
+                img {
+                    height: 100% !important;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .carousel-indicators {
+            display: none !important;
+
+            button {
+                background-color: rgba($color: #000000, $alpha: 1);
+                height: 4px;
+            }
+        }
+    }
+
+    .caption {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 30%;
+        display: flex;
+        // flex-direction: column;
+        background: rgba(255, 255, 255, 0.33);
+        backdrop-filter: blur(6.3px);
+        -webkit-backdrop-filter: blur(6.3px);
+        color: #444;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        border-radius: 2px;
+        gap: 30px;
+
+        .title {
+            flex-basis: 20%;
+
+            h3 {
+                padding: 0px 2px;
+                text-transform: uppercase !important;
+                margin: 0;
+                height: 48px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                overflow: hidden;
+                font-size: 40px;
+
+                span {
+                    position: absolute;
+                }
+            }
+
+        }
+
+
+        p {
+            font-size: 16px;
+            max-width: 40%;
+            margin: 0;
+        }
+    }
+
+    .carousel-control-prev {
+        color: #DDB892 !important;
+    }
+
+    .cursor-follow {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 2px solid #FEFAE0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        transform-origin: 50% 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 2px dashed #BC6C25;
+            border-radius: 50%;
+            animation-name: rotation;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+        }
+        
+
+        .cursor-follow-icon {
+            pointer-events: none;
+            animation-name: rotation-reverse;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+        }
+
+    }
+
+
+
+    .event-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    @keyframes rotation {
+        0% {
+            transform: rotateZ(0deg);
+        }
+
+        100% {
+            transform: rotateZ(360deg);
+        }
+    }
+
+    @keyframes rotation-reverse {
+        0% {
+            transform: rotateZ(0deg);
+        }
+
+        100% {
+            transform: rotateZ(-360deg);
+        }
+    }
+}

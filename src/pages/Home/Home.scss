@@ -3,4 +3,21 @@
     .Banner-section {
         height: 88vh;
     }
+
+    .Banner-attachment{
+        height: 500px;
+
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .Banner-section {
+        height: 60vh !important;
+    }
+    
+    .Banner-attachment{
+        height: 200px!important;
+
+    }
 }

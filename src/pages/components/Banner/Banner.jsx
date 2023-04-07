@@ -2,7 +2,7 @@ import React, { useState, useLayoutEffect, useRef } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import "./Banner.scss"
 import gsap from 'gsap';
-import * as Icon from 'react-bootstrap-icons';
+
 
 const Banner = () => {
     /* ---------- VARIABLES STATE ------------ */
@@ -21,7 +21,6 @@ const Banner = () => {
                 gsap.from(el, 1, { y: "35px", ease: 'Power4.easeOut' }, 0.1);
             });
         }, BannerRef);
-
         return () => ctx.revert();
     }, []);
 
@@ -30,11 +29,7 @@ const Banner = () => {
         setIndex(selectedIndex);
     };
 
-    const textAnim = () => {
-        revealRefs.current.forEach((el, index) => {
-            gsap.from(el, 1, { y: "35px", ease: 'Power4.easeOut' }, 0.1);
-        });
-    }
+
 
     const addRef = (el) => {
         if (el && !revealRefs.current.includes(el)) {
@@ -46,7 +41,6 @@ const Banner = () => {
     const hanldeMouseOver = (event) => {
         event.stopPropagation();
         var cursor = cursorRef.current
-        var banner = event.currentTarget
         var cX = event.screenX
         var cY = event.screenY
         cursor.style.display = "flex"
@@ -63,10 +57,34 @@ const Banner = () => {
         document.body.style.cursor = 'auto';
     }
 
+    //Xử lí xự kiện ấn mua
+    const handleMouseDown = (event) => {
+        cursorScaleAnim();
+    }
+
+    const cursorScaleAnim = () => {
+        const cursor = cursorRef.current
+        cursor.style.transform = 'scale(0.83)'
+    }
+
+    const stopScaleAnim = () => {
+        var cursor = cursorRef.current
+        const cursorText = document.querySelector('.cursor-follow-text')
+        cursor.style.transform = 'scale(1)'
+        cursor.style.borderColor = '#EDF6F9'
+        cursor.style.backgroundColor = "transparent"
+        cursorText.style.color = "white"
+    }
+
+    //Xử lí xự kiện ấn mua
+    const handleMouseUp = (event) => {
+        stopScaleAnim();
+    }
+
     /* ---------- HTML RENDERER DOM ------------ */
     return (
         <div className='Banner' >
-            <Carousel activeIndex={index} onSelect={handleSelect} ref={carousel} >
+            <Carousel activeIndex={index} onSelect={handleSelect} touch="true" ref={carousel} >
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
@@ -107,19 +125,22 @@ const Banner = () => {
                         </span>
                     </h3>
                 </div>
-
                 <p>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
                     simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
                 </p>
             </div>
+            <div className='caption-mobile button-50'>
+                <h2>Khám phá</h2>
+            </div>
             <div className='cursor-follow' ref={cursorRef}>
-                <div className='cursor-follow-icon'>
-                    <Icon.BagHeartFill size={40} color="#544025" />
+                <div className='cursor-dashed-border'></div>
+                <div className='cursor-follow-text'>
+                    {/* <Icon.BagHeartFill size={40} color="#A4C3B2" className='abc'/> */}
+                    <h3>Xem ngay</h3>
                 </div>
             </div>
-
-            <div className='event-container' onMouseMove={hanldeMouseOver} onMouseLeave={handleMouseLeave}></div>
+            <div className='event-container' onMouseMove={hanldeMouseOver} onMouseLeave={handleMouseLeave} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}></div>
         </div>
     )
 }

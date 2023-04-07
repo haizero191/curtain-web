@@ -1,0 +1,60 @@
+.BannerAttachment {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+
+    .image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-attachment: fixed;
+        background-image: url('https://media.diyblinds.com.au/uploads/general/Box-Bay-Curtains-Hero2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: brightness(68%);
+    }
+
+    .content {
+        width: 100%;
+        min-height: 380px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* From https://css.glass */
+        color: white;
+        padding: 10px 40px;
+
+        h3 {
+            font-size: 38px;
+            margin-bottom: 16px;
+        }
+
+        p {
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 100%;
+    }
+}
+
+
+
+
+// Responsive mobile
+@media only screen and (max-width: 767px) {
+    .BannerAttachment {
+    
+        .container {
+            display: none!important;
+        }
+    }
+}

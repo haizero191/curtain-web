@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 .Banner {
     width: 100%;
     height: 100%;
     background-size: cover;
     position: relative;
 
+    .btn-mobile {
+        display: none;
+    }
     .carousel {
         height: 100% !important;
 
@@ -49,7 +53,6 @@
 
         .title {
             flex-basis: 20%;
-
             h3 {
                 padding: 0px 2px;
                 text-transform: uppercase !important;
@@ -61,15 +64,11 @@
                 justify-content: flex-end;
                 overflow: hidden;
                 font-size: 40px;
-
                 span {
                     position: absolute;
                 }
             }
-
         }
-
-
         p {
             font-size: 16px;
             max-width: 40%;
@@ -77,6 +76,9 @@
         }
     }
 
+    .caption-mobile {
+        display: none;
+    }
     .carousel-control-prev {
         color: #DDB892 !important;
     }
@@ -85,7 +87,6 @@
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        border: 2px solid #FEFAE0;
         position: absolute;
         top: 0;
         left: 0;
@@ -96,13 +97,14 @@
         justify-content: center;
         pointer-events: none;
         cursor: pointer;
-
-        &::before {
+        transition: 0.32s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: none;
+        .cursor-dashed-border {
             content: "";
             position: absolute;
             width: 150px;
             height: 150px;
-            border: 2px dashed #BC6C25;
+            border: 2px dashed #FEFAE0;
             border-radius: 50%;
             animation-name: rotation;
             animation-duration: 10s;
@@ -110,18 +112,33 @@
             animation-fill-mode: forwards;
         }
         
-
-        .cursor-follow-icon {
+        .cursor-follow-text {
+            text-align: center;
+            text-transform: uppercase;
             pointer-events: none;
-            animation-name: rotation-reverse;
-            animation-duration: 10s;
-            animation-iteration-count: infinite;
-            animation-fill-mode: forwards;
-        }
+            color: white;
+            border-radius: 50%;
+            background-color: rgba(44, 44, 44,0.8);
+           h3 {
+                letter-spacing: 4px;
+                font-family: 'Bebas Neue', cursive;
+                font-weight: bold;
+                font-size: 40px;
+                line-height: 34px;
+             
+                transform: translateX(4px) translateY(4px);
+                padding: 18px;
 
+            }
+        }
     }
 
-
+    .scale-anim {
+        transform: scale(0.8);
+        .cursor-dashed-border {
+            border: 2px dashed red!important;
+        }
+    }
 
     .event-container {
         position: absolute;
@@ -150,4 +167,76 @@
             transform: rotateZ(-360deg);
         }
     }
+}
+
+// Responsive mobile
+@media only screen and (max-width: 767px) {
+    .caption {
+        display: none!important;
+    }
+
+    .caption-mobile {
+        width: 60%;
+        background-color: #D3CCC3;
+        left: 20%;
+        padding: 10px 8px;
+        position: absolute;
+        display: flex!important;
+        align-items: center;
+        justify-content: center;
+        bottom: -6%;
+    
+        color: white;
+        text-transform: uppercase;
+
+        h2 {
+            margin: 0;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+
+
+
+
+
+
+/* CSS */
+.button-50 {
+  appearance: button;
+  background-image: none;
+  border: 1px solid #D3CCC3;
+  box-shadow: #fff 4px 4px 0 0,#D3CCC3 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+  .button-50 {
+    padding: 12px 50px;
+  }
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import "./Categories_Home.scss"
 const Categories_Home = () => {
     return (
-        <div className='Categories'>
+        <div className='Categories_Home'>
             <div className='wrapper'>
                 <div className='title'>
                     <h3>Dịch vụ của chúng tôi</h3>

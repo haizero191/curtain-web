@@ -5,6 +5,7 @@ import Brands_Home from '../components/Brands_Home/Brands_Home';
 import Categories_Home from '../components/Categories_Home/Categories_Home';
 
 import "./Home.scss";
+import Products_Home from '../components/Products_Home/Products_Home';
 
 const Home = () => {
   return (
@@ -25,6 +26,9 @@ const Home = () => {
       </div>
       <div className='Brands-section'>
         <Brands_Home />
+      </div>
+      <div className='Products-section'>
+        <Products_Home />
       </div>
     </div>
   )

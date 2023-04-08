@@ -1,0 +1,21 @@
+.Products_Home {
+    .title {
+        text-align: center;
+        h3 {
+            font-size: 30px;
+            text-transform: uppercase;
+            padding: 40px 10px;
+            margin: 0;
+            background-color: red;
+        }
+    }
+    .content {
+        .product-list {
+            height: 100%;
+            .product-item {
+                height: 100%;
+                background-color: red;
+            }
+        }
+    }
+}

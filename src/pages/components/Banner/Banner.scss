@@ -171,6 +171,9 @@
 
 // Responsive mobile
 @media only screen and (max-width: 767px) {
+    body {
+        cursor: auto!important;
+    }
     .caption {
         display: none!important;
     }
@@ -185,7 +188,6 @@
         align-items: center;
         justify-content: center;
         bottom: -6%;
-    
         color: white;
         text-transform: uppercase;
 

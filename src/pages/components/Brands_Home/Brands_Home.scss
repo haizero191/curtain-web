@@ -1,0 +1,61 @@
+.Brands_Home {
+    height: 100%;
+  
+    .carousel-container  {
+        height: 100%!important;
+        
+    
+        .react-multi-carousel-item {
+            height: 100%;
+        }
+    
+        .react-multi-carousel-track {
+            height: 100%;
+            .brand-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+    
+                img {
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -o-user-select: none;
+                    user-select: none;
+                    mix-blend-mode: multiply;
+                }
+            }
+        }
+
+        .react-multiple-carousel__arrow   {
+            opacity: 0;
+        }
+        .react-multiple-carousel__arrow--right {
+            top: calc(50% - 30px);
+            width: 60px;
+            height: 60px;
+            &::before {
+                color: white;
+                font-size: 30px;
+            }
+        }
+     
+        .react-multiple-carousel__arrow--left {
+           
+            top: calc(50% - 30px);
+            width: 60px;
+            height: 60px;
+            &::before {
+                color: white;
+                font-size: 30px;
+            }
+        }
+    }
+
+    .carousel-container:hover {
+        // .react-multiple-carousel__arrow   {
+        //     opacity: 1!important;
+        // }
+    }
+}

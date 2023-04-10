@@ -1,0 +1,69 @@
+.ProductReview_Home {
+    width: 100%;
+    height: 100%;
+
+    .image {
+        height: 65%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel {
+            height: 100%;
+        }
+        .carousel-inner {
+            height: 100%!important;
+        }
+        .carousel-indicators button {
+            width: 25px;
+            height: 25px;
+            border: 1px solid #333;
+        }
+    }
+    .info {
+        height: 35%;
+        padding: 20px 10px;
+        .name {
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .short-desc {
+            width: 100%;
+            display: -webkit-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            span {
+               font-size: 12px;
+            }
+            margin-bottom: 26px;
+        }
+
+        .btn-detail {
+            display: flex;
+            align-items: center;
+            justify-content: center ;
+            padding: 8px 30px;
+            background-color: #333;
+            color: white;
+            margin-bottom: 8px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+
+        .btn-contact {
+            display: flex;
+            align-items: center;
+            justify-content: center ;
+            padding: 8px 30px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    }
+}

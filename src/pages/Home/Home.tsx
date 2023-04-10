@@ -15,17 +15,17 @@ const Home = () => {
         <Banner />
       </div>
       <div className='quotes'>
-          <span>“Nếu bạn muốn mọi người hiểu mình, hãy mời họ vào cuộc sống của bạn và để họ nhìn thế giới từ cửa sổ của bạn!”</span>
-          <span>– Mehmet Murat ildan – </span>
+        <span>“Nếu bạn muốn mọi người hiểu mình, hãy mời họ vào cuộc sống của bạn và để họ nhìn thế giới từ cửa sổ của bạn!”</span>
+        <span>– Mehmet Murat ildan – </span>
       </div>
       <div className='categories-section'>
         <Categories_Home />
       </div>
-      <div className='Banner-attachment'>
-        <BannerAttachment />
-      </div>
       <div className='Brands-section'>
         <Brands_Home />
+      </div>
+      <div className='Banner-attachment'>
+        <BannerAttachment />
       </div>
       <div className='Products-section'>
         <Products_Home />

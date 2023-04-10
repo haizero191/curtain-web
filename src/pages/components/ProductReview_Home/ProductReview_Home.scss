@@ -67,3 +67,18 @@
         }
     }
 }
+
+
+@media only screen and (max-width: 767px) {
+    .ProductReview_Home {
+        .image {
+            height: 60%!important;
+        }
+
+        .info {
+            height: 40%!important;
+        }
+    }
+
+    
+}

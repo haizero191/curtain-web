@@ -43,14 +43,14 @@ const Products_Home = () => {
 
                         {
                             [0, 0, 0, 0].map((item, index) => {
-                                return <div className={`h-100 product-item`} >
-                                    <ProductReview_Home />
+                                return <div className={`h-100 product-item`}  key={index}>
+                                    <ProductReview_Home/>
                                 </div>
                             })
                         }
                     </Carousel>
                 </div>
-                <div class="view-all">Xem tất cả</div>
+                <div className="view-all">Xem tất cả</div>
             </div>
         </div>
     )
